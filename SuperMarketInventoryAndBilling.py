@@ -49,9 +49,9 @@ def create_order():
     while response=="y":
         oName = input('Which item would you like add to basket: ')
         oQuantity = input('Quantity Please: ')
-        oQuantity=int(oQuantity)
+        oQuantity=float(oQuantity)
         iQuantity=inventory.at[inventory.index[inventory.Name==oName][0],'Quantity']
-        iQuantity=int(iQuantity)
+        iQuantity=float(iQuantity)
         if iQuantity >= oQuantity:
             order=order.append(inventory[inventory["Name"]==oName],ignore_index=True)
             order.at[order.index[order.Name==oName][0],'Quantity']=oQuantity
